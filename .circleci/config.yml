@@ -10,7 +10,7 @@ jobs:
       - run: PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
       - run: git config --global user.email "tukaiari@gmail.com"
       - run: git config --global user.name "Arijit Roy"
-      - run: repo init -u https://github.com/Evolution-X/manifest -b elle
+      - run: repo init --depth=1 -u https://github.com/Evolution-X/manifest -b elle
       - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
       - run: . build/envsetup.sh
       - run: lunch evolution_lavender-userdebug
