@@ -5,13 +5,12 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: mkdir ~/evo-x && cd ~/evo-x
-      - run: sudo apt install curl
-      - run: PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
       - run: git config --global user.email "tukaiari@gmail.com"
       - run: git config --global user.name "Arijit Roy"
+      - run: curl -O https://raw.githubusercontent.com/arijit192/ab/main/su.sh && chmod +x su.sh && sudo ./su.sh
+      - run: mkdir ~/evo-x && cd ~/evo-x
       - run: repo init --depth=1 -u https://github.com/Evolution-X/manifest -b elle
       - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-      - run: . build/envsetup.sh
-      - run: lunch evolution_lavender-userdebug
-      - run: mka bacon -jX
+      - run: cd ~/evo-x && source build/envsetup.sh
+      - run: cd ~/evo-x && lunch evolution_lavender-userdebug
+      - run: cd ~/evo-x && mka bacon -jX
