@@ -13,4 +13,4 @@ jobs:
       - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
       - run: cd ~/evo-x && source build/envsetup.sh
       - run: cd ~/evo-x && lunch evolution_lavender-userdebug
-      - run: cd ~/evo-x && mka bacon -jX
+      - run: cd ~/evo-x && mka bacon -jX 
