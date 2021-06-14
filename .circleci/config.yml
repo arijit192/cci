@@ -5,4 +5,9 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: cat /etc/os-release
+      - run: mkdir ~/evo-x && cd ~/evo-x
+      - run: repo init -u https://github.com/Evolution-X/manifest -b elle
+      - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+      - run: . build/envsetup.sh
+      - run: lunch evolution_lavender-userdebug
+      - run: mka bacon -jX
