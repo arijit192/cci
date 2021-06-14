@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir ~/evo-x && cd ~/evo-x
-      - run: apt install -y repo
+      - run: sudo apt install repo
       - run: repo init -u https://github.com/Evolution-X/manifest -b elle
       - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
       - run: . build/envsetup.sh
