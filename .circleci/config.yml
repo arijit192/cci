@@ -6,7 +6,13 @@ jobs:
     steps:
       - checkout
       - run: mkdir ~/evo-x && cd ~/evo-x
-      - run: sudo apt install repo
+      - run: sudo apt install curl
+      - run:
+        command: |
+          mkdir ~/bin
+          PATH=~/bin:$PATH
+          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+          chmod a+x ~/bin/repo
       - run: repo init -u https://github.com/Evolution-X/manifest -b elle
       - run: repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
       - run: . build/envsetup.sh
