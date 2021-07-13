@@ -13,4 +13,4 @@ jobs:
       - run: mkdir ~/aros && cd ~/aros && repo init --depth=1 -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 && repo sync
       - run: cd ~/aros && git clone -b arrow-11.0 https://github.com/ArrowOS-Devices/android_device_xiaomi_lavender.git device/xiaomi/lavender && repo sync --force
       - run: cd ~/aros && . build/envsetup.sh && lunch arrow_lavender-userdebug
-      - run: cd ~/aros && m bacon
+      - run: cd ~/aros && m bacon 
