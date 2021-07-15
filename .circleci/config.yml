@@ -13,5 +13,5 @@ jobs:
       - run: ssh-keygen -q -t rsa -N '' <<< ""$'\n'"y" 2>&1 >/dev/null && curl "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6e32600e92c401ad25d4814767b7e448692b382c" >> ~/keyfile.gpg && gpg --import ~/keyfile.gpg
       - run: mkdir ~/aros && cd ~/aros && repo init --depth=1 -u https://source.codeaurora.org/platform/manifest.git -b release -m LA.UM.9.6.2.r1-04700-89xx.0.xml && repo sync
       #- run: cd ~/aros && git clone -b arrow-11.0 https://github.com/ArrowOS-Devices/android_device_xiaomi_lavender.git device/xiaomi/lavender && repo sync --force
-      - run: cd ~/aros && source build/envsetup.sh && choosecombo 1 1
+      - run: cd ~/aros && source build/envsetup.sh && choosecombo 1 aosp_arm64 eng
       #- run: cd ~/aros && m bacon 
