@@ -10,7 +10,7 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
       - run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
-      - run: ssh-keygen -q -t rsa -N '' <<< ""$'\n'"y" 2>&1 >/dev/null && gpg --receive-keys 6e32600e92c401ad25d4814767b7e448692b382c
+      - run: ssh-keygen -q -t rsa -N '' <<< ""$'\n'"y" 2>&1 >/dev/null && gpg --search-keys cco3@android.com
       - run: mkdir ~/aros && cd ~/aros && repo init --depth=1 -u https://source.codeaurora.org/platform/manifest.git -b release -m LA.UM.9.6.2.r1-04700-89xx.0.xml --repo-url=https://source.codeaurora.org/tools/repo.git --repo-branch=caf-stable && repo sync
       #- run: cd ~/aros && git clone -b arrow-11.0 https://github.com/ArrowOS-Devices/android_device_xiaomi_lavender.git device/xiaomi/lavender && repo sync --force
       - run: cd ~/aros && source build/envsetup.sh && choosecombo
