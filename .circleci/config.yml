@@ -12,5 +12,5 @@ jobs:
       - run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
       - run: mkdir ~/an && cd ~/an && repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1 && repo sync
       - run: cd ~/an && git clone https://github.com/arijit192/android_device_samsung_m11q.git device/samsung/m11q
-      - run: cd ~/an && source build/envsetup.sh && croot && brunch m11q
+      - run: cd ~/an && source build/envsetup.sh && croot && lunch lineage_m11q-userdebug
       #- run: cd ~/aros && m bacon 
