@@ -3,6 +3,7 @@ jobs:
   build:
     machine:
       image: ubuntu-2004:202104-01
+    resource_class: large
     steps:
       - checkout
       - run: git config --global user.email "tukaiari@gmail.com"
@@ -14,4 +15,4 @@ jobs:
       #- run: cd ~/an/.repo/ && mkdir local_manifests && cd local_manifests && curl https://gitlab.com/the-muppets/manifest/-/raw/lineage-15.1/muppets.xml -o roomservice.xml
       #- run: cd ~/an && git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi.git vendor/xiaomi && source build/envsetup.sh && breakfast lavender && croot && brunch lavender
       #- run: cd ~/an && ./vendor/calyx/scripts/setup-apv.sh sunfish
-      - run: cd ~/an && source build/envsetup.sh && lunch aosp_arm64-userdebug && make -j2
+      - run: cd ~/an && source build/envsetup.sh && lunch aosp_arm64-userdebug && make
