@@ -11,8 +11,8 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5-dev lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
       - run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
-      - run: mkdir ~/an && cd ~/an && repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b android10-gsi && repo sync -c
+      - run: mkdir ~/an && cd ~/an && repo init --depth=1 -u git://codeaurora.org/platform/manifest.git -b release -m LA.UM.9.6.2.r1-04800-89xx.0.xml && repo sync
       #- run: cd ~/an/.repo/ && mkdir local_manifests && cd local_manifests && curl https://gitlab.com/the-muppets/manifest/-/raw/lineage-15.1/muppets.xml -o roomservice.xml
       #- run: cd ~/an && git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi.git vendor/xiaomi && source build/envsetup.sh && breakfast lavender && croot && brunch lavender
       #- run: cd ~/an && ./vendor/calyx/scripts/setup-apv.sh sunfish
-      - run: cd ~/an && source build/envsetup.sh && lunch aosp_arm64-userdebug && make
+      - run: cd ~/an && source build/envsetup.sh && choosecombo 1 aosp_arm64 eng && make
