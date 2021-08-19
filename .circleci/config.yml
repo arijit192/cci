@@ -17,4 +17,4 @@ jobs:
       #- run: cd ~/an && ./vendor/calyx/scripts/setup-apv.sh sunfish
       #- run: cd ~/an && source build/envsetup.sh && choosecombo 1 aosp_arm64 eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && make
       - run: dd if=/dev/zero of=swapfile bs=1M count=8192 status=progress && sudo chown root:disk swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile && sudo swapon swapfile
-      - run: lsblk
+      - run: free -h
