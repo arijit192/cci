@@ -16,7 +16,7 @@ jobs:
       - run: mkdir ~/an && cd ~/an && repo init --depth=1 -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 && repo sync
       #- run: cd ~/an/.repo/ && mkdir local_manifests && cd local_manifests && curl https://gitlab.com/the-muppets/manifest/-/raw/lineage-15.1/muppets.xml -o roomservice.xml
       #- run: cd ~/an && git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi.git vendor/xiaomi && source build/envsetup.sh && breakfast lavender && croot && brunch lavender
-      #- run: cd ~/an && ./vendor/calyx/scripts/setup-apv.sh sunfish
+      - run: cd ~/an && . build/envsetup.sh && lunch
       #- run: cd ~/an && source build/envsetup.sh && choosecombo 1 aosp_arm64 eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && make
       #- run: cd ~/an && source build/envsetup.sh && lunch msm8953_64-userdebug && m
-      - run: du -sh ~/an
+      #- run: du -sh ~/an
