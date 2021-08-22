@@ -19,7 +19,7 @@ jobs:
       - save_cache:
           key: android-source
           paths:
-            - ~/an/*
+            - ~/an
       #- run: cd ~/an/.repo/ && mkdir local_manifests && cd local_manifests && curl https://gitlab.com/the-muppets/manifest/-/raw/lineage-15.1/muppets.xml -o roomservice.xml
       #- run: cd ~/an && git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi.git vendor/xiaomi && source build/envsetup.sh && breakfast lavender && croot && brunch lavender
       - run: cd ~/an && . build/envsetup.sh
