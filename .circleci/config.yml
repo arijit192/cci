@@ -18,5 +18,5 @@ jobs:
       #- run: cd ~/an && git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi.git vendor/xiaomi && source build/envsetup.sh && breakfast lavender && croot && brunch lavender
       #- run: cd ~/an && ./vendor/calyx/scripts/setup-apv.sh sunfish
       #- run: cd ~/an && source build/envsetup.sh && choosecombo 1 aosp_arm64 eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && make
-      - run: cd ~/an && rm -rf .repo
+      #- run: cd ~/an && rm -rf .repo
       - run: cd ~/an && source build/envsetup.sh && lunch potato_beryllium-userdebug && brunch beryllium
