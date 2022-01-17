@@ -6,7 +6,7 @@ jobs:
     resource_class: large
     steps:
       - checkout
-      - run: dd if=/dev/zero of=swapfile bs=1M count=8192 status=progress && sudo chown root:disk swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile && sudo swapon swapfile
+      #- run: dd if=/dev/zero of=swapfile bs=1M count=8192 status=progress && sudo chown root:disk swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile && sudo swapon swapfile
       - run: free -h
       - run: git config --global user.email "tukaiari@gmail.com"
       - run: git config --global user.name "Arijit Roy"
