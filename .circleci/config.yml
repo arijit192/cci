@@ -3,7 +3,7 @@ jobs:
   build:
     machine:
       image: ubuntu-2004:202104-01
-    resource_class: large
+    resource_class: xlarge
     steps:
       - checkout
       #- run: dd if=/dev/zero of=swapfile bs=1M count=8192 status=progress && sudo chown root:disk swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile && sudo swapon swapfile
